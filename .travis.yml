@@ -5,3 +5,12 @@ serives:
 script:
   - docker build -t nurbakhyt/node .
   - docker images nurbakhyt/node
+
+before_deploy:
+  - docker login -u $DOCKER_USER -p $DOCKER__PASS
+
+deploy:
+  provider: script
+  script: docker push nurbakhyt/node
+  on:
+    branch: main
