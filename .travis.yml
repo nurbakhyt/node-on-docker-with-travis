@@ -7,7 +7,7 @@ script:
   - docker images nurbakhyt/node
 
 before_deploy:
-  - docker login -u $DOCKER_USER -p $DOCKER__PASS
+  - docker login -u $DOCKER_USER -p $DOCKER_PASS
 
 deploy:
   provider: script
